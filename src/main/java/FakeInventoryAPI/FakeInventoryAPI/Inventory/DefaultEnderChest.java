@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class DefaultEnderChest extends FakeChest {
+
     public DefaultEnderChest() {
         super(InventoryType.ENDER_CHEST, null, null);
     }
@@ -30,9 +31,13 @@ public class DefaultEnderChest extends FakeChest {
         super(inventoryType, null, title);
     }
 
-
     private static byte[] getNbt(BlockVector3 pos, String name) {
-        CompoundTag tag = new CompoundTag().putString("id", BlockEntity.ENDER_CHEST).putInt("x", pos.x).putInt("y", pos.y).putInt("z", pos.z).putString("CustomName", name == null ? "Сундук края" : name);
+        CompoundTag tag = new CompoundTag()
+                .putString("id", BlockEntity.ENDER_CHEST)
+                .putInt("x", pos.x)
+                .putInt("y", pos.y)
+                .putInt("z", pos.z)
+                .putString("CustomName", name == null ? "Сундук края" : name);
         try {
             return NBTIO.write(tag, ByteOrder.LITTLE_ENDIAN, true);
         } catch (IOException e) {
@@ -42,7 +47,7 @@ public class DefaultEnderChest extends FakeChest {
 
     @Override()
     protected List<BlockVector3> onOpenBlock(Player player) {
-        BlockVector3 blockPosition = new BlockVector3((int) player.x, ((int) player.y) + 2, (int) player.z);
+        BlockVector3 blockPosition = new BlockVector3(player.getFloorX(), player.getFloorY() + 2, player.getFloorZ());
         placeChest(player, blockPosition);
         return Collections.singletonList(blockPosition);
     }

@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor()
 public class FakeInventoryEventsHandler implements Listener {
     private static final FakeChests fakeChests = new FakeChests();
 
@@ -21,7 +21,7 @@ public class FakeInventoryEventsHandler implements Listener {
         List<BlockVector3> positions = fakeChests.getFakeInventoryPositions(event.getPlayer());
         if (block != null && positions != null) {
             for (BlockVector3 pos : positions) {
-                if (pos.x == block.x && pos.y == block.y && pos.z == block.z) {
+                if (pos.getX() == block.getX() && pos.getY() == block.getZ() && pos.z == block.getZ()) {
                     event.setCancelled();
                     return;
                 }
