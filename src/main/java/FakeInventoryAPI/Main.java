@@ -1,6 +1,6 @@
 package FakeInventoryAPI;
 
-import FakeInventoryAPI.FakeInventoryAPI.FakeInventoryEventsHandler;
+import FakeInventoryAPI.FakeInventoryAPI.EventsListener.BlockBreakListener;
 import cn.nukkit.plugin.PluginBase;
 
 public class Main extends PluginBase {
@@ -9,12 +9,12 @@ public class Main extends PluginBase {
     @Override()
     public void onEnable() {
         plugin = this;
-        this.getServer().getPluginManager().registerEvents(new FakeInventoryEventsHandler(), this);
-        this.getServer().getLogger().info("§l§fПлагин на §6FakeInventoryAPI §aАктивирован§7!");
+        this.getServer().getPluginManager().registerEvents(new BlockBreakListener(), this);
+        this.getLogger().info("§l§fПлагин на §6FakeInventoryAPI §aАктивирован§7!");
     }
 
     @Override()
     public void onDisable() {
-        this.getServer().getLogger().info("§l§fПлагин на §6FakeInventoryAPI §cДеактивирован§7!");
+        this.getLogger().info("§l§fПлагин на §6FakeInventoryAPI §cДеактивирован§7!");
     }
 }

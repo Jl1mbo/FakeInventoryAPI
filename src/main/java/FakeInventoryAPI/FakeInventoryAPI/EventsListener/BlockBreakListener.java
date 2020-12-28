@@ -1,4 +1,4 @@
-package FakeInventoryAPI.FakeInventoryAPI;
+package FakeInventoryAPI.FakeInventoryAPI.EventsListener;
 
 import FakeInventoryAPI.FakeInventoryAPI.Utils.FakeChests;
 import cn.nukkit.block.Block;
@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 
 @RequiredArgsConstructor()
-public class FakeInventoryEventsHandler implements Listener {
+public class BlockBreakListener implements Listener {
     private static final FakeChests fakeChests = new FakeChests();
 
     @EventHandler(priority = EventPriority.HIGHEST)
@@ -22,7 +22,7 @@ public class FakeInventoryEventsHandler implements Listener {
         if (block != null && positions != null) {
             for (BlockVector3 pos : positions) {
                 if (pos.getX() == block.getX() && pos.getY() == block.getZ() && pos.z == block.getZ()) {
-                    event.setCancelled();
+                    event.setCancelled(true);
                     return;
                 }
             }
