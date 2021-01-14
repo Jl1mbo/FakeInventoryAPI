@@ -84,7 +84,7 @@ public abstract class FakeChest extends ContainerInventory {
                     updateBlock.z = blockPosition.getFloorZ();
                     player.dataPacket(updateBlock);
                 }
-            }.runTaskLater(Main.plugin, 2 + i);
+            }.runTaskLater(Main.getInstance(), 2 + i);
         }
     }
 

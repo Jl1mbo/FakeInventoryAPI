@@ -18,7 +18,7 @@ public class FakeInventoryAPI {
                     player.addWindow(inventory);
                 }
             }
-        }.runTaskLater(Main.plugin, 10);
+        }.runTaskLater(Main.getInstance(), 10);
     }
 
     public static void openDoubleChestInventory(Player player, Inventory inventory) {
@@ -30,7 +30,7 @@ public class FakeInventoryAPI {
                     player.addWindow(inventory);
                 }
             }
-        }.runTaskLater(Main.plugin, 12);
+        }.runTaskLater(Main.getInstance(), 12);
     }
 
     public static void closeDoubleChestInventory(Player player, Inventory inventory) {
@@ -42,7 +42,7 @@ public class FakeInventoryAPI {
                     player.removeWindow(inventory);
                 }
             }
-        }.runTaskLater(Main.plugin, 10);
+        }.runTaskLater(Main.getInstance(), 10);
     }
 
     public static void closeInventory(Player player, Inventory inventory) {

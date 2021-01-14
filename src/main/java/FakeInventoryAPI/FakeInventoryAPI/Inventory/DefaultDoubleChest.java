@@ -48,7 +48,7 @@ public class DefaultDoubleChest extends DefaultChest {
             public void run() {
                 onFakeOpen(player, blocks);
             }
-        }.runTaskLater(Main.plugin, 10);
+        }.runTaskLater(Main.getInstance(), 10);
     }
 
     @Override()
