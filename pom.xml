@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>FakeInventoryAPI</groupId>
     <artifactId>FakeInventoryAPI</artifactId>
-    <version>3.2</version>
+    <version>3.3</version>
     <build>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
         <defaultGoal>install</defaultGoal>
@@ -61,11 +61,10 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>cn.nukkit</groupId>
-            <artifactId>PowerNukkit</artifactId>
-            <version>1.14.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/libs/PowerNukkit.jar</systemPath>
+            <groupId>org.powernukkit</groupId>
+            <artifactId>powernukkit</artifactId>
+            <version>1.4.0.0-PN-ALPHA.2</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <properties>

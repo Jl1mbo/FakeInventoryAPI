@@ -1,6 +1,6 @@
 package FakeInventoryAPI;
 
-import FakeInventoryAPI.FakeInventoryAPI.EventsListener.BlockBreakListener;
+import FakeInventoryAPI.Components.EventsListener.BlockBreakListener;
 import cn.nukkit.plugin.PluginBase;
 
 public class Main extends PluginBase {
